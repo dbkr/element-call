@@ -14,6 +14,10 @@ jobs:
       deployments: write
     environment: Netlify
     steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(github.event.workflow_run);
       - name: 📝 Create Deployment
         uses: bobheadxi/deployments@v1
         id: deployment
