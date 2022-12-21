@@ -17,7 +17,7 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            console.log(github.event.workflow_run);
+            console.log(context);
       - name: 📝 Create Deployment
         uses: bobheadxi/deployments@v1
         id: deployment
