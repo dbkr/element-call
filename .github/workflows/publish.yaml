@@ -53,11 +53,11 @@ jobs:
           ls ./element-call-*.tar.gz
 
       - name: Upload
-        uses: alexellis/upload-assets@0.4.0
+        uses: actions/upload-artifact@v3
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          asset_paths: '["element-call-${{ github.event.release.tag_name || github.sha }}.tar.gz"]'
+          path: "./element-call-*.tar.gz"
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
